@@ -1,7 +1,7 @@
 financial-data-damodaran
 ========================
 
-Data Source: [Aswath Damodaran's website](http://pages.stern.nyu.edu/~adamodar/New_Home_Page/data.html).**
+Data Source: [Aswath Damodaran's website](http://pages.stern.nyu.edu/~adamodar/New_Home_Page/data.html).
 
 ## Install requirements
 
@@ -9,7 +9,7 @@ Data Source: [Aswath Damodaran's website](http://pages.stern.nyu.edu/~adamodar/N
 
 `sudo apt install mongodb`
 
-`sudo service l mongodb start`
+`sudo service mongodb start`
 
 `sudo pip install -r requirements.txt --upgrade`
 

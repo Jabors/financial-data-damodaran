@@ -6,3 +6,4 @@ cherrypy
 pyopenssl
 six
 httpagentparser
+requests
