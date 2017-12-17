@@ -236,10 +236,29 @@ class QuickFinStatsAPI(object):
 
 			raise cherrypy.HTTPError(500, 'Bad Request: Wrong Region '+region)
 
+	def load_http_server():
+		# extra server instance to dispatch HTTP
+		server = cherrypy._cpserver.Server()
+		server.socket_host = config.api_host
+		server.socket_port = 80
+		server.subscribe()
+
+	def force_tls():
+		if cherrypy.request.scheme == "http":
+			# see https://support.google.com/webmasters/answer/6073543?hl=en
+			raise cherrypy.HTTPRedirect(cherrypy.url().replace("http:", "https:"),
+										status=301)
+
+	cherrypy.tools.force_tls = cherrypy.Tool("before_handler", force_tls)
+	
 if __name__ == '__main__':
 	cherrypy.tools.CORS = cherrypy.Tool('before_finalize', CORS)
 	cherrypy.config.update({'server.socket_host':config.api_host,'server.socket_port': config.api_port})
-	#Uncomment this if you want SSL
-	#cherrypy.config.update({'server.ssl_module':'pyopenssl','server.ssl_certificate':config.ssl_certificate, 'server.ssl_private_key':config.private_key,})
+	#Change this option if you want SSL and HTTP to HTTPS redirects
+	if config.use_ssl:
+		cherrypy.config.update({'tools.force_tls.on': True, 'server.ssl_module':'pyopenssl','server.ssl_certificate':config.ssl_certificate, 'server.ssl_private_key':config.private_key,})
+		load_http_server()
 	cherrypy.config.update({'environment' : 'production'})
 	cherrypy.quickstart(QuickFinStatsAPI(), config={'/': {'tools.CORS.on': True}})
+
+	

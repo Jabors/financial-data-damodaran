@@ -7,13 +7,17 @@ Data Source: [Aswath Damodaran's website](http://pages.stern.nyu.edu/~adamodar/N
 
 `sudo apt update`
 
-`sudo apt install mongodb`
+`sudo apt install mongodb python python-pip`
 
 `sudo service mongodb start`
 
 `sudo pip install -r requirements.txt --upgrade`
 
 ## Populate Database
+
+First, sign up on [Alphavantage](https://www.alphavantage.co) and get your API key. Then:
+
+`echo YOUR_API_KEY > alphavantage_api_key.txt`
 
 `python populate_database.py`
 
