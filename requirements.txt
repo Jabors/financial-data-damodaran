@@ -1,0 +1,8 @@
+xlrd
+pymongo
+googlefinance
+sympy
+cherrypy
+pyopenssl
+six
+httpagentparser

@@ -1,0 +1,4 @@
+*.pyc
+*.sublime-workspace
+*.sublime-project
+*api_key.txt

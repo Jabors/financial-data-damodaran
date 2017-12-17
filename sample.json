@@ -1,0 +1,66 @@
+{
+	"name": "",
+	"ticker": "",
+	"exchange": "",
+	"description": "",
+	"price_per_share": 1.0,
+	"shares_outstanding": 100,
+	"market_cap": 1.0,
+	"enterprise_value": 100,
+	"cash_and_equivalents": 1.0,
+	"debt_and_equivalents": 1.0,
+	"sector": "",
+	"currency": "",	
+	"industry_exposure" : [
+		{
+				"industry" : "",
+				"exposure" : 1.0
+		}
+	],
+	"unlevered_beta": 1.0,
+	"levered_beta": 1.0,
+	"geographic_exposure" : [
+		{
+			"region" : "",
+			"exposure" : 1.0
+		}
+	],
+	"equity_risk_premium": 0.05,
+	"cost_of_equity": 0.10,
+	"value_of_equity": 0.00,
+	"default_spread": 0.02,
+	"effective_tax_rate": 0.25,
+	"pre_tax_cost_of_debt": 0.05,
+	"after_tax_cost_of_debt": 0.05,
+	"interest_expense": 0.05,
+	"average_maturity": 2,
+	"operating_leases": [
+		{
+			"rent_expense": 100.0,
+			"lease_commitments":[10,20,30,40,150],
+			"value":1.0
+		}
+
+	],
+	"convertible_debt": 0.0,
+	"convertible_price_to_par": 0.0,
+	"debt_value_convertible": 0.0,
+	"equity_value_convertible": 0.0,
+	"preferred": [
+		{
+			"name": "",
+			"shares_outstanding" : 100,
+			"price": 1.0,
+			"dividend": 1.0
+		}
+	],
+	"cost_of_preferred": 0.0,
+	"value_of_preferred": 0.0,
+	"cost_of_capital": 0.08,
+	"FY2017": {
+		"date": "",
+		"Assets": {
+			...
+		}
+	}
+}
