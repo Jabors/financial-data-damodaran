@@ -1,6 +1,9 @@
 quickfinstats-api
 =================
 
+Original blog post: [My personal site](https://www.javierandres.me/importing-and-visualizing-financial-data/).
+Available at https://api.quickfinstats.com
+
 ## Equity Risk Premiums:
 ```bash
 curl 'http://localhost:8080/equityRiskPremiums?country=United%20States'

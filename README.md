@@ -1,6 +1,7 @@
 financial-data-damodaran
 ========================
 
+Original blog post: [My personal site](https://www.javierandres.me/importing-and-visualizing-financial-data/).
 Data Source: [Aswath Damodaran's website](http://pages.stern.nyu.edu/~adamodar/New_Home_Page/data.html).
 
 ## Install requirements
