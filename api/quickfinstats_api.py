@@ -29,6 +29,57 @@ class QuickFinStatsAPI(object):
 		self.sectors=self.db.diversified_betas.distinct('sector')
 
 	@cherrypy.expose
+	def index(self):
+		return """
+        <html><body>
+            <h1>QuickFinStats: Sample Requests</h1>
+            <h2>Equity Risk Premiums</h2>
+            <p>
+            	<a href="https://api.quickfinstats.com/equityRiskPremiums?country=United%20States">https://api.quickfinstats.com/equityRiskPremiums?country=United%20States</a>
+            </p>
+            <h2>Risk-free rates</h2>
+            <p>
+            	<a href="https://api.quickfinstats.com/currencyRates?currency=EUR">https://api.quickfinstats.com/currencyRates?currency=EUR</a>
+            </p>
+            <p>
+            	<a href="https://api.quickfinstats.com/currencyRates?country=Morocco">https://api.quickfinstats.com/currencyRates?country=Morocco</a>
+            </p>
+            <h2>Bond yields</h2>
+            <p>
+            	<a href="https://api.quickfinstats.com/bondYields?country=Spain">https://api.quickfinstats.com/bondYields?country=Spain</a>
+            </p>
+            <h2>Relative risk measures</h2>
+            <p>
+            	<a href="https://api.quickfinstats.com/riskByIndustryPublic?region=eur&sector=Education">https://api.quickfinstats.com/riskByIndustryPublic?region=eur&sector=Education</a>
+            </p>
+            <p>
+            	<a href="https://api.quickfinstats.com/riskByIndustryPrivate?country=Canada&sector=Real%20Estate%20(Development)">https://api.quickfinstats.com/riskByIndustryPrivate?country=Canada&sector=Real%20Estate%20(Development)</a>
+            </p>
+            <h2>All Sectors</h2>
+            <p>
+            	<a href="https://api.quickfinstats.com/allSectors">https://api.quickfinstats.com/allSectors</a>
+            </p>
+            <h2>All Currencies</h2>
+            <p>
+            	<a href="https://api.quickfinstats.com/allCurrencies">https://api.quickfinstats.com/allSectors</a>
+            </p>
+            <h2>All Countries to Economic Regions</h2>
+            <p>
+            	<a href="https://api.quickfinstats.com/allCountriesToEcon">https://api.quickfinstats.com/allSectors</a>
+            </p>
+            <h2>All Countries with Bond Yields</h2>
+            <p>
+            	<a href="https://api.quickfinstats.com/allCountriesYields">https://api.quickfinstats.com/allSectors</a>
+            </p>
+            <h2>All Regions</h2>
+            <p>
+            	<a href="https://api.quickfinstats.com/allRegions">https://api.quickfinstats.com/allSectors</a>
+            </p>
+
+        </body></html>
+        """
+
+	@cherrypy.expose
 	def allSectors(self):
 		return json.dumps(self.sectors)
 
@@ -256,7 +307,7 @@ if __name__ == '__main__':
 	cherrypy.config.update({'server.socket_host':config.api_host,'server.socket_port': config.api_port})
 	#Change this option if you want SSL and HTTP to HTTPS redirects
 	if config.use_ssl:
-		cherrypy.config.update({'tools.force_tls.on': True, 'server.ssl_module':'pyopenssl','server.ssl_certificate':config.ssl_certificate, 'server.ssl_private_key':config.private_key,})
+		cherrypy.config.update({'tools.force_tls.on': True, 'server.ssl_module':'pyopenssl','server.ssl_certificate':config.ssl_certificate, 'server.ssl_private_key':config.private_key, 'server.ssl_certificate_chain': config.certificate_chain})
 		load_http_server()
 	cherrypy.config.update({'environment' : 'production'})
 	cherrypy.quickstart(QuickFinStatsAPI(), config={'/': {'tools.CORS.on': True}})

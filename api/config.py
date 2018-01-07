@@ -16,3 +16,4 @@ api_port=8080
 use_ssl=False
 ssl_certificate=''
 private_key=''
+certificate_chain=''
