@@ -61,19 +61,19 @@ class QuickFinStatsAPI(object):
             </p>
             <h2>All Currencies</h2>
             <p>
-            	<a href="https://api.quickfinstats.com/allCurrencies">https://api.quickfinstats.com/allSectors</a>
+            	<a href="https://api.quickfinstats.com/allCurrencies">https://api.quickfinstats.com/allCurrencies</a>
             </p>
             <h2>All Countries to Economic Regions</h2>
             <p>
-            	<a href="https://api.quickfinstats.com/allCountriesToEcon">https://api.quickfinstats.com/allSectors</a>
+            	<a href="https://api.quickfinstats.com/allCountriesToEcon">https://api.quickfinstats.com/allCountriesToEcon</a>
             </p>
             <h2>All Countries with Bond Yields</h2>
             <p>
-            	<a href="https://api.quickfinstats.com/allCountriesYields">https://api.quickfinstats.com/allSectors</a>
+            	<a href="https://api.quickfinstats.com/allCountriesYields">https://api.quickfinstats.com/allCountriesYields</a>
             </p>
             <h2>All Regions</h2>
             <p>
-            	<a href="https://api.quickfinstats.com/allRegions">https://api.quickfinstats.com/allSectors</a>
+            	<a href="https://api.quickfinstats.com/allRegions">https://api.quickfinstats.com/allRegions</a>
             </p>
 
         </body></html>
